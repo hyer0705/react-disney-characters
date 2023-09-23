@@ -1,7 +1,10 @@
 import { Outlet } from "react-router-dom";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import theme from "./theme";
 
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -49,13 +52,23 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Caveat', cursive;
+  background-color: ${(props) => props.theme.bgColor};
+  color: ${(props) => props.theme.textColor};
+}
 `;
 
 export default function App() {
   return (
-    <div>
-      <GlobalStyle />
-      <Outlet />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <GlobalStyle />
+        <Outlet />
+      </div>
+    </ThemeProvider>
   );
 }
