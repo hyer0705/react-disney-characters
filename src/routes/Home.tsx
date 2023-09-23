@@ -36,7 +36,6 @@ const CharacterItem = styled.div`
   transition: background-color 0.3s ease-in;
 
   a {
-    text-decoration: none;
     color: ${(props) => props.theme.textColor};
     display: flex;
     flex-direction: column;

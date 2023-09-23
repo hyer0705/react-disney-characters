@@ -4,13 +4,45 @@ import { fetchCharacterById } from "../api";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Container = styled.div``;
+const Container = styled.div`
+  max-width: 360px;
+  margin: 30px auto;
+`;
 
-const Header = styled.div``;
+const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 
-const Title = styled.h1``;
+  a {
+    color: ${(props) => props.theme.textColor};
+  }
+`;
 
-const Films = styled.ul``;
+const Img = styled.img`
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  margin: 20px 0;
+`;
+
+const Title = styled.h1`
+  font-size: 24px;
+`;
+
+const Films = styled.ul`
+  text-align: center;
+  li {
+    background-color: ${(props) => props.theme.textColor};
+    color: ${(props) => props.theme.bgColor};
+    display: inline-block;
+    padding: 7px;
+    border-radius: 5px;
+    margin: 5px;
+  }
+`;
 
 interface ICharacterDetail {
   id: number;
@@ -38,7 +70,7 @@ function Character() {
             <Link to="/">
               <span>&larr;</span>
             </Link>
-            <img alt={character?.name} src={character?.imageUrl} />
+            <Img alt={character?.name} src={character?.imageUrl} />
             <Title>{`${character?.name}'s Films'`}</Title>
           </Header>
           <Films>
