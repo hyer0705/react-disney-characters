@@ -28,6 +28,13 @@ const SubTitle = styled.h2`
 const Description = styled.p`
   font-size: 20px;
   margin-bottom: 15px;
+  a {
+    color: ${(props) => props.theme.textColor};
+    padding: 5px 20px;
+    &:hover {
+      color: ${(props) => props.theme.hoverTextColor};
+    }
+  }
 `;
 
 function NotFound() {

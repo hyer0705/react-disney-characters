@@ -25,9 +25,10 @@ const GoHome = styled.div`
     padding: 5px 30px;
     border-radius: 7px;
     transition: background-color 0.3s ease-in;
+    font-weight: 700;
     &:hover {
-      background-color: #d2dae2;
-      color: #3c40c6;
+      background-color: ${(props) => props.theme.hoverBgColor};
+      color: ${(props) => props.theme.hoverTextColor};
     }
   }
 `;
