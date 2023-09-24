@@ -15,9 +15,21 @@ const Header = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+`;
 
+const GoHome = styled.div`
+  width: 100%;
+  text-align: center;
   a {
     color: ${(props) => props.theme.textColor};
+    padding: 5px 30px;
+    border-radius: 7px;
+    transition: background-color 0.3s ease-in;
+    font-weight: 700;
+    &:hover {
+      background-color: ${(props) => props.theme.hoverBgColor};
+      color: ${(props) => props.theme.hoverTextColor};
+    }
   }
 `;
 
@@ -67,9 +79,9 @@ function Character() {
       ) : (
         <>
           <Header>
-            <Link to="/">
-              <span>&larr;</span>
-            </Link>
+            <GoHome>
+              <Link to="/">&larr;</Link>
+            </GoHome>
             <Img alt={character?.name} src={character?.imageUrl} />
             <Title>{`${character?.name}'s Films'`}</Title>
           </Header>
