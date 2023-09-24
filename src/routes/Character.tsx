@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { fetchCharacterById } from "../api";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Loader from "../components/Loader";
 
 const Container = styled.div`
   max-width: 360px;
@@ -56,6 +57,16 @@ const Films = styled.ul`
   }
 `;
 
+const LoaderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ${Title} {
+    margin-bottom: 20px;
+  }
+`;
+
 interface ICharacterDetail {
   id: number;
   films: string[];
@@ -75,7 +86,10 @@ function Character() {
   return (
     <Container>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <LoaderWrapper>
+          <Title>Character...</Title>
+          <Loader />
+        </LoaderWrapper>
       ) : (
         <>
           <Header>

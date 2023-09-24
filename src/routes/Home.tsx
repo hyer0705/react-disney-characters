@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import styled from "styled-components";
 import { fetchAllCharacters } from "../api";
 import { Link, Outlet } from "react-router-dom";
+import Loader from "../components/Loader";
 
 const Container = styled.div`
   max-width: 90%;
@@ -78,7 +79,7 @@ function Home() {
           <Title>Disney Characters</Title>
         </Header>
         {isLoading ? (
-          <h1>Loading...</h1>
+          <Loader />
         ) : (
           <CharacterList>
             {characters?.map((character) => (
