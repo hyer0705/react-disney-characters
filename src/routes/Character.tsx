@@ -15,9 +15,20 @@ const Header = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+`;
 
+const GoHome = styled.div`
+  width: 100%;
+  text-align: center;
   a {
     color: ${(props) => props.theme.textColor};
+    padding: 5px 30px;
+    border-radius: 7px;
+    transition: background-color 0.3s ease-in;
+    &:hover {
+      background-color: #d2dae2;
+      color: #3c40c6;
+    }
   }
 `;
 
@@ -67,9 +78,9 @@ function Character() {
       ) : (
         <>
           <Header>
-            <Link to="/">
-              <span>&larr;</span>
-            </Link>
+            <GoHome>
+              <Link to="/">&larr;</Link>
+            </GoHome>
             <Img alt={character?.name} src={character?.imageUrl} />
             <Title>{`${character?.name}'s Films'`}</Title>
           </Header>
