@@ -57,16 +57,6 @@ const Films = styled.ul`
   }
 `;
 
-const LoaderWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  ${Title} {
-    margin-bottom: 20px;
-  }
-`;
-
 interface ICharacterDetail {
   id: number;
   films: string[];
@@ -85,27 +75,18 @@ function Character() {
 
   return (
     <Container>
-      {isLoading ? (
-        <LoaderWrapper>
-          <Title>Character...</Title>
-          <Loader />
-        </LoaderWrapper>
-      ) : (
-        <>
-          <Header>
-            <GoHome>
-              <Link to="/">&larr;</Link>
-            </GoHome>
-            <Img alt={character?.name} src={character?.imageUrl} />
-            <Title>{`${character?.name}'s Films'`}</Title>
-          </Header>
-          <Films>
-            {character?.films.map((film, index) => (
-              <li key={index}>{film}</li>
-            ))}
-          </Films>
-        </>
-      )}
+      <Header>
+        <GoHome>
+          <Link to="/">&larr;</Link>
+        </GoHome>
+        <Img alt={character?.name} src={character?.imageUrl} />
+        <Title>{isLoading ? <Loader /> : `${character?.name}'s Films'`}</Title>
+      </Header>
+      <Films>
+        {character?.films.map((film, index) => (
+          <li key={index}>{film}</li>
+        ))}
+      </Films>
     </Container>
   );
 }
