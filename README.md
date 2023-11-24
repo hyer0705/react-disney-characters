@@ -2,11 +2,14 @@
 
 ## 프로젝트 소개
 API를 사용하여 Disney 캐릭터의 정보를 소개하는 앱   
-(노마드코더 리액트 챌린지 스터디 과제)
+(노마드코더 리액트 챌린지 스터디 과제)   
 > 개발기간: 2023.09.23 ~ 2023.09.26
 
 ## 메인 화면
 ![image](https://github.com/hyer0705/react-disney-characters/assets/50125734/8353b4e4-74b0-4e68-85d5-70927b3ad41f)
+
+## Demo
+https://hyer0705.github.io/react-disney-characters
 
 ## 기능
 - API 사용해서 디즈니 캐릭터 목록 보여주기
